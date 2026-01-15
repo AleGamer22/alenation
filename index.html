@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <title>Ale Nation | ANV [THE EDITOR]</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="noise-overlay"></div>
+
+    <header class="channel-header">
+        <div class="banner-container">
+            </div>
+        <div class="profile-section">
+            <div class="profile-pic fade-in-down">
+                <img src="avatar.jpg" alt="ANV Logo">
+            </div>
+            <div class="profile-info fade-in-up">
+                <h1>Ale Nation AKA ANV <span class="highlight">[THE EDITOR]</span></h1>
+                <p class="tagline">Visuals. Lyrics. Editing.</p>
+                <div class="header-buttons">
+                    <a href="#portfolio" class="btn-primary">View Portfolio</a>
+                    <a href="https://www.youtube.com/@AleNationVibes" target="_blank" class="btn-secondary">YouTube Channel</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="vibes" class="reveal">
+            <h2 class="section-title"><i class="fab fa-youtube"></i> LATEST VIDEOS</h2>
+            <div class="grid">
+                
+                <div class="video-card">
+                    <div class="video-frame">
+                        <iframe 
+                            src="https://www.youtube.com/embed/lXlxJbjEFDk?si=ISkmFhO8sRIHZUdq" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h3>Latest Video</h3>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-frame">
+                        <iframe 
+                            src="https://www.youtube.com/embed/lXlxJbjEFDk?si=ISkmFhO8sRIHZUdq" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h3>Editing Showcase</h3>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="divider reveal">
+
+        <section id="portfolio" class="reveal">
+            <h2 class="section-title"><i class="fas fa-layer-group"></i> WORK & LYRICS</h2>
+            <p class="section-desc">Selected works for artists and clients.</p>
+            
+            <div class="grid">
+                
+                <div class="video-card">
+                    <div class="video-frame">
+                        <iframe 
+                            src="https://www.youtube.com/embed/iB6v0jwbE-Y" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h3>Patryx PMA ft. Sarmiento a.k.a NoDramaKid - Where's Your Love? (Lyrics Video by ANV)</h3>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-frame">
+                        <iframe 
+                            src="https://www.youtube.com/embed/flC-6TTPt28" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h3>Vand1x - Cruces de Neón (ANV Lyrics Video)</h3>
+                </div>
+
+                 <div class="video-card">
+                    <div class="video-frame">
+                        <iframe 
+                            src="https://www.youtube.com/embed/lXlxJbjEFDk?si=ISkmFhO8sRIHZUdq" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h3>Short Form Content</h3>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer reveal">
+        <h2>CONNECT</h2>
+        <div class="social-icons">
+            <a href="https://instagram.com/alenationvibes" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:contact@alenation.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="copyright">© 2026 Ale Nation Records. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', reveal);
+        function reveal(){
+            var reveals = document.querySelectorAll('.reveal');
+            for(var i = 0; i < reveals.length; i++){
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+                if(revealtop < windowheight - revealpoint){
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
+
