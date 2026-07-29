@@ -1,3 +1,5 @@
+/* --- ESTILOS MEJORADOS: BORDES MORADOS, FONDO NEGRO Y EFECTOS PÍXEL SUTILES --- */
+
 /* --- RESET & BASICS --- */
 * {
     margin: 0;
@@ -10,13 +12,14 @@ html {
 }
 
 body {
-    background-color: #0f0f0f; /* Negro estilo YouTube */
+    background-color: #050505; /* Fondo negro profundo */
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* --- NOISE EFFECT (Textura granulada estilo Editor) --- */
+/* --- EFECTO PÍXEL SUTIL & RUIDO --- */
 .noise-overlay {
     position: fixed;
     top: 0;
@@ -25,27 +28,39 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 999;
-    opacity: 0.04; /* Muy sutil */
+    opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.pixel-grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 998;
+    background-image: radial-gradient(rgba(177, 156, 217, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px; /* Trama sutil tipo píxel/retro grid sin exagerar */
 }
 
 /* --- HEADER & BANNER --- */
 .channel-header {
     width: 100%;
-    background-color: #0f0f0f;
+    background-color: #050505;
     padding-bottom: 2rem;
     position: relative;
+    border-bottom: 1px solid #2d1b4e;
 }
 
 .banner-container {
     width: 100%;
     height: 300px;
-    /* Fondo negro si no hay imagen, o degradado sobre la imagen banner.jpg */
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #0f0f0f 100%), 
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #050505 100%), 
                 url('banner.jpg'); 
     background-size: cover;
     background-position: center;
-    background-color: #1a1a1a;
+    background-color: #120a1f;
 }
 
 .profile-section {
@@ -64,14 +79,15 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 6px solid #0f0f0f;
+    border: 6px solid #4a2e80; /* Borde morado elegante */
     background-color: #000;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 25px rgba(74, 46, 128, 0.4);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .profile-pic img:hover {
     transform: scale(1.05) rotate(3deg);
+    border-color: #b19cd9;
 }
 
 .profile-info {
@@ -88,7 +104,7 @@ body {
 }
 
 .highlight {
-    color: #888; /* Gris claro para diferenciar [THE EDITOR] */
+    color: #b19cd9; /* Tono lila/morado suave */
     font-weight: 400;
 }
 
@@ -118,25 +134,26 @@ body {
 }
 
 .btn-primary {
-    background-color: #fff;
-    color: #000;
-    border: 2px solid #fff;
+    background-color: #b19cd9;
+    color: #050505;
+    border: 2px solid #b19cd9;
 }
 
 .btn-primary:hover {
     background-color: transparent;
-    color: #fff;
+    color: #b19cd9;
+    border-color: #4a2e80;
 }
 
 .btn-secondary {
     background-color: transparent;
-    border: 2px solid #555;
+    border: 2px solid #4a2e80;
     color: #fff;
 }
 
 .btn-secondary:hover {
-    border-color: #fff;
-    background-color: rgba(255,255,255,0.1);
+    border-color: #b19cd9;
+    background-color: rgba(74, 46, 128, 0.2);
 }
 
 /* --- MAIN LAYOUT --- */
@@ -150,7 +167,7 @@ body {
     font-family: 'Oswald', sans-serif;
     font-size: 1.8rem;
     margin-bottom: 20px;
-    border-left: 5px solid #fff;
+    border-left: 5px solid #b19cd9; /* Borde morado lateral */
     padding-left: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -164,7 +181,24 @@ body {
     font-size: 0.95rem;
 }
 
-/* --- VIDEO GRID RESPONSIVE --- */
+/* --- TARJETAS DE CAPACIDADES --- */
+.capability-card {
+    background-color: #0b0712; 
+    border: 1px solid #2d1b4e; /* Borde morado oscuro */
+    padding: 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.capability-card:hover {
+    transform: translateY(-5px);
+    border-color: #b19cd9 !important; /* Brillo morado al hacer hover */
+    box-shadow: 0 6px 20px rgba(74, 46, 128, 0.3);
+}
+
+/* --- GRID & CARDS --- */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -180,21 +214,20 @@ body {
     transform: translateY(-5px);
 }
 
-/* Contenedor responsivo para el iframe de YouTube */
 .video-frame {
     position: relative;
-    padding-bottom: 56.25%; /* Ratio 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    background: #1f1f1f;
+    background: #0b0712;
     border-radius: 6px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    border: 1px solid #333;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    border: 1px solid #2d1b4e;
     transition: border-color 0.3s ease;
 }
 
 .video-card:hover .video-frame {
-    border-color: #fff; /* Se ilumina el borde al pasar el mouse */
+    border-color: #b19cd9;
 }
 
 .video-frame iframe {
@@ -220,7 +253,7 @@ body {
 .divider {
     border: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, #333, transparent);
+    background: linear-gradient(90deg, transparent, #2d1b4e, transparent);
     margin: 80px 0;
 }
 
@@ -228,8 +261,8 @@ body {
 .footer {
     text-align: center;
     padding: 80px 20px;
-    background-color: #050505;
-    border-top: 1px solid #1a1a1a;
+    background-color: #030205;
+    border-top: 1px solid #2d1b4e;
 }
 
 .footer h2 {
@@ -247,68 +280,24 @@ body {
 }
 
 .social-icons a:hover {
-    color: #fff;
+    color: #b19cd9;
     transform: scale(1.2);
 }
 
 .copyright {
-    color: #333;
+    color: #555;
     font-size: 0.8rem;
     margin-top: 40px;
 }
 
-/* --- ANIMACIONES --- */
-
-/* 1. Fade In Down (Logo) */
-.fade-in-down {
-    animation: fadeInDown 1s ease-out;
-}
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* 2. Fade In Up (Texto Header) */
-.fade-in-up {
-    animation: fadeInUp 1s ease-out 0.3s backwards;
-}
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* 3. Scroll Reveal (Secciones al bajar) */
-.reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-}
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive Móvil */
-@media (max-width: 768px) {
-    .grid { grid-template-columns: 1fr; }
-    .profile-info h1 { font-size: 1.8rem; }
-    .banner-container { height: 200px; }
-}
-
-/* --- ESTILOS PARA LAS TARJETAS DE CAPACIDADES --- */
-.capability-card:hover {
-    transform: translateY(-5px);
-    border-color: #fff !important;
-}
-
-/* --- ESTILOS DE LOS MODALES INTERACTIVOS --- */
+/* --- MODALES CON BORDES MORADOS --- */
 .custom-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(3, 2, 5, 0.85);
     backdrop-filter: blur(6px);
     display: flex;
     justify-content: center;
@@ -325,8 +314,8 @@ body {
 }
 
 .custom-modal-content {
-    background-color: #121212;
-    border: 1px solid #333;
+    background-color: #0b0712;
+    border: 2px solid #4a2e80; /* Marco principal morado */
     width: 90%;
     max-width: 700px;
     padding: 35px;
@@ -334,7 +323,7 @@ body {
     position: relative;
     transform: scale(0.9);
     transition: transform 0.3s ease;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    box-shadow: 0 15px 40px rgba(45, 27, 78, 0.6);
     max-height: 85vh;
     overflow-y: auto;
 }
@@ -347,9 +336,9 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    background-color: #222;
+    background-color: #120a1f;
     color: #fff;
-    border: 1px solid #444;
+    border: 1px solid #4a2e80;
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -362,7 +351,40 @@ body {
 }
 
 .close-modal-btn:hover {
-    background-color: #fff;
-    color: #000;
-    border-color: #fff;
+    background-color: #b19cd9;
+    color: #050505;
+    border-color: #b19cd9;
+}
+
+/* --- ANIMACIONES --- */
+.fade-in-down {
+    animation: fadeInDown 1s ease-out;
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .grid { grid-template-columns: 1fr; }
+    .profile-info h1 { font-size: 1.8rem; }
+    .banner-container { height: 200px; }
 }
