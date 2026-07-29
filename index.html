@@ -6,7 +6,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="p:domain_verify" content="ef8c60f86691681b2dd6af2edf8f1244"/>
     
-    <title>Ale Nation | ANV [THE EDITOR]</title>
+    <title>Ale Nation | ANV [THE EDITOR & IT]</title>
     <link rel="stylesheet" href="style.css">
     
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -17,18 +17,17 @@
     <div class="noise-overlay"></div>
 
     <header class="channel-header">
-        <div class="banner-container">
-            </div>
+        <div class="banner-container"></div>
         <div class="profile-section">
             <div class="profile-pic fade-in-down">
                 <img src="avatar.jpg" alt="ANV Logo">
             </div>
             <div class="profile-info fade-in-up">
-                <h1>Ale Nation AKA ANV <span class="highlight">[THE EDITOR]</span></h1>
-                <p class="tagline">Music Producer. Visuals. Lyrics. Editing.</p>
+                <h1>Ale Nation AKA ANV <span class="highlight">[THE EDITOR & IT]</span></h1>
+                <p class="tagline">Music Producer. Visuals. Lyrics. Editing. IT Support.</p>
                 <div class="header-buttons">
                     <a href="#portfolio" class="btn-primary">View Portfolio</a>
-                    <a href="https://www.youtube.com/@AleNationVibes" target="_blank" class="btn-secondary">YouTube Channel</a>
+                    <button onclick="openModal('skillsModal')" class="btn-secondary" style="cursor: pointer;">Ver Perfil Completo</button>
                 </div>
             </div>
         </div>
@@ -36,38 +35,48 @@
 
     <main class="container">
         
+        <!-- SECCIÓN DE HABILIDADES / MODALES RÁPIDOS -->
+        <section id="capabilities" class="reveal" style="margin-bottom: 60px;">
+            <h2 class="section-title"><i class="fas fa-id-card"></i> ÁREAS DE EXPERTIZ</h2>
+            <p class="section-desc">Haz clic en cada tarjeta para desplegar el desglose completo de capacidades.</p>
+            
+            <div class="grid">
+                <div class="capability-card" onclick="openModal('modalMultimedia')" style="background: #141414; border: 1px solid #333; padding: 25px; border-radius: 6px; cursor: pointer; transition: 0.3s;">
+                    <i class="fas fa-video" style="font-size: 2rem; color: #fff; margin-bottom: 15px;"></i>
+                    <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Edición & Multimedia</h3>
+                    <p style="color: #888; font-size: 0.9rem;">Videoclips, lyric videos, sincronización de audio, motion graphics y retoque visual con CapCut, Filmora y Photoshop.</p>
+                </div>
+
+                <div class="capability-card" onclick="openModal('modalAudio')" style="background: #141414; border: 1px solid #333; padding: 25px; border-radius: 6px; cursor: pointer; transition: 0.3s;">
+                    <i class="fas fa-music" style="font-size: 2rem; color: #fff; margin-bottom: 15px;"></i>
+                    <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Producción Musical</h3>
+                    <p style="color: #888; font-size: 0.9rem;">Grabación, mezcla vocal avanzada (Ecualización, DeEssers, Compresión, Delays) en BandLab y generación de conceptos con Suno.</p>
+                </div>
+
+                <div class="capability-card" onclick="openModal('modalIt')" style="background: #141414; border: 1px solid #333; padding: 25px; border-radius: 6px; cursor: pointer; transition: 0.3s;">
+                    <i class="fas fa-network-wired" style="font-size: 2rem; color: #fff; margin-bottom: 15px;"></i>
+                    <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Perfil Técnico & IT (SMR)</h3>
+                    <p style="color: #888; font-size: 0.9rem;">Soporte técnico VoIP (Asterisk), redes, montaje/reparación de hardware avanzado y administración de sistemas en entornos profesionales.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="vibes" class="reveal">
             <h2 class="section-title"><i class="fab fa-youtube"></i> LATEST VIDEOS</h2>
             <div class="grid">
-                
                 <div class="video-card">
                     <div class="video-frame">
-                        <iframe 
-                            src="https://www.youtube.com/embed/lXlxJbjEFDk?si=ISkmFhO8sRIHZUdq" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
+                        <iframe src="https://www.youtube.com/embed/lXlxJbjEFDk?si=ISkmFhO8sRIHZUdq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <h3>Latest Video</h3>
                 </div>
 
                 <div class="video-card">
                     <div class="video-frame">
-                        <iframe 
-                            src="https://www.youtube.com/embed/G8pYCIzQjis" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
+                        <iframe src="https://www.youtube.com/embed/G8pYCIzQjis" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <h3>Music Video Showcase</h3>
                 </div>
-
             </div>
         </section>
 
@@ -78,50 +87,26 @@
             <p class="section-desc">Selected works for artists and clients.</p>
             
             <div class="grid">
-                
                 <div class="video-card">
                     <div class="video-frame">
-                        <iframe 
-                            src="https://www.youtube.com/embed/iB6v0jwbE-Y" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
+                        <iframe src="https://www.youtube.com/embed/iB6v0jwbE-Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <h3>Patryx PMA ft. Sarmiento a.k.a NoDramaKid - Where's Your Love? (Lyrics Video by ANV)</h3>
                 </div>
 
                 <div class="video-card">
                     <div class="video-frame">
-                        <iframe 
-                            src="https://www.youtube.com/embed/flC-6TTPt28" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
+                        <iframe src="https://www.youtube.com/embed/flC-6TTPt28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <h3>Vand1x - Cruces de Neón (ANV Lyrics Video)</h3>
                 </div>
 
                  <div class="video-card">
                     <div class="video-frame">
-                        <iframe 
-                            src="https://www.youtube-nocookie.com/embed/f8olxc-YSwM?si=g-qyeJNbWpN4V1EI" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                            <iframe src="https://www.youtube-nocookie.com/embed/f8olxc-YSwM?si=aUIl4uU9QuRfm8rF&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </iframe>
+                        <iframe src="https://www.youtube-nocookie.com/embed/f8olxc-YSwM?si=g-qyeJNbWpN4V1EI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <h3>Video edited by ANV</h3>
                 </div>
-
             </div>
         </section>
 
@@ -137,7 +122,74 @@
         <p class="copyright">© 2026 Ale Nation Records. All Rights Reserved.</p>
     </footer>
 
+    <!-- ==========================================
+         MODALES DE CONTENIDO EXTENDIDO
+         ========================================== -->
+
+    <!-- Modal 1: Edición y Multimedia -->
+    <div id="modalMultimedia" class="custom-modal-overlay">
+        <div class="custom-modal-content">
+            <button class="close-modal-btn" onclick="closeModal('modalMultimedia')"><i class="fas fa-times"></i></button>
+            <h2 style="font-family: 'Oswald', sans-serif; font-size: 1.8rem; margin-bottom: 15px; color: #fff;">Edición & Producción Multimedia</h2>
+            <p style="color: #aaa; margin-bottom: 20px;">Capacidades profesionales enfocadas en el sector audiovisual y redes sociales:</p>
+            <ul style="color: #ccc; margin-left: 20px; line-height: 1.8;">
+                <li><strong>Edición de Vídeo Avanzada:</strong> Ritmo de corte dinámico, transiciones fluidas y sincronización perfecta con pistas de audio o música.</li>
+                <li><strong>Creación de Lyric Videos:</strong> Diseño y animación de subtítulos y textos visuales adaptados a la estética del artista (ej. <em>Where's Your Love?</em> o <em>Cruces de Neón</em>).</li>
+                <li><strong>Herramientas y Software:</strong> Dominio intermedio/avanzado de CapCut, Wondershare Filmora, Photoshop, Photopea y Canva.</li>
+                <li><strong>Gestión de Marca Personal:</strong> Creación y mantenimiento de identidad visual para canales de YouTube y plataformas de streaming.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 2: Producción Musical -->
+    <div id="modalAudio" class="custom-modal-overlay">
+        <div class="custom-modal-content">
+            <button class="close-modal-btn" onclick="closeModal('modalAudio')"><i class="fas fa-times"></i></button>
+            <h2 style="font-family: 'Oswald', sans-serif; font-size: 1.8rem; margin-bottom: 15px; color: #fff;">Producción Musical & Audio</h2>
+            <p style="color: #aaa; margin-bottom: 20px;">Experiencia en tratamiento de voz y generación de conceptos sonoros:</p>
+            <ul style="color: #ccc; margin-left: 20px; line-height: 1.8;">
+                <li><strong>Procesamiento Vocal:</strong> Refinamiento de cadenas de efectos (Ecualización correctiva, DeEssers para sibilancias, compresión y delays creativos) en BandLab.</li>
+                <li><strong>Creación Sonora:</strong> Generación y estructuración de conceptos musicales y bases para proyectos audiovisuales con herramientas asistidas como Suno.</li>
+                <li><strong>Mezcla y Limpieza:</strong> Reducción de ruido, ajuste de dinámicas y balance estéreo para conseguir acabados limpios y profesionales.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 3: Perfil Técnico / IT -->
+    <div id="modalIt" class="custom-modal-overlay">
+        <div class="custom-modal-content">
+            <button class="close-modal-btn" onclick="closeModal('modalIt')"><i class="fas fa-times"></i></button>
+            <h2 style="font-family: 'Oswald', sans-serif; font-size: 1.8rem; margin-bottom: 15px; color: #fff;">Perfil Técnico & IT (SMR)</h2>
+            <p style="color: #aaa; margin-bottom: 20px;">Formación oficial y experiencia laboral real en soporte técnico y sistemas[cite: 1]:</p>
+            <ul style="color: #ccc; margin-left: 20px; line-height: 1.8;">
+                <li><strong>Soporte Técnico VoIP (VOZ.COM):</strong> Resolución de más de 100 incidencias en 500 horas de prácticas mediante soporte remoto y telefónico; configuración de centralitas basadas en Asterisk[cite: 1].</li>
+                <li><strong>Hardware y Ensamblaje (PCBox):</strong> Montaje, diagnóstico avanzado de componentes mediante herramientas especializadas, mantenimiento y reparación integral de equipos informáticos[cite: 1].</li>
+                <li><strong>Sistemas Operativos y Redes:</strong> Técnico de Grado Medio en Sistemas Microinformáticos y Redes (IES Villablanca) y FP Básica en Informática y Comunicaciones (IES Isaac Peral)[cite: 1].</li>
+                <li><strong>Ofimática y Herramientas:</strong> Google Workspace, Microsoft Office (Nivel intermedio), gestión de redes locales y conectividad[cite: 1].</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal General para botón superior -->
+    <div id="skillsModal" class="custom-modal-overlay">
+        <div class="custom-modal-content">
+            <button class="close-modal-btn" onclick="closeModal('skillsModal')"><i class="fas fa-times"></i></button>
+            <h2 style="font-family: 'Oswald', sans-serif; font-size: 1.8rem; margin-bottom: 15px; color: #fff;">Alejandro Martínez Arellano [ANV]</h2>
+            <p style="color: #aaa; margin-bottom: 15px;">Perfil polivalente que fusiona la creatividad digital (edición y música) con la solidez técnica de la administración de sistemas y soporte IT.</p>
+            <p style="color: #ccc; line-height: 1.6; margin-bottom: 20px;">
+                <strong>Ubicación:</strong> Madrid, España (Disponibilidad total / Permiso de trabajo)[cite: 1]<br>
+                <strong>Idiomas:</strong> Inglés Nivel B2[cite: 1]<br>
+                <strong>Estudios:</strong> SMR en IES Villablanca[cite: 1]
+            </p>
+            <div style="text-align: center;">
+                <a href="mailto:alenationvibes@gmail.com" class="btn-primary" style="display: inline-block;">Contactar Directamente</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript para Animaciones y Modales -->
     <script>
+        // Scroll Reveal
         window.addEventListener('scroll', reveal);
         function reveal(){
             var reveals = document.querySelectorAll('.reveal');
@@ -150,8 +202,25 @@
                 }
             }
         }
+
+        // Sistema de Modales
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar modal haciendo clic fuera de la caja de contenido
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('custom-modal-overlay')) {
+                e.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
     </script>
 </body>
 </html>
-
-
